@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/template.xhtml">	
+	<ui:define name="content">
+		<h:form >
+		<p:messages id="messages" autoUpdate="true" closable="true"  />
+		<p:panelGrid columns="3" >		
+		    <p:inputText style="width:400px;" id="op"  value="#{mybean.tweet}" required="true" validatorMessage="El campo no debe estar vacio"/>
+		   	<p:commandButton id="msg" title="enviar tweet" value="enviar tweet" actionListener="#{mybean.sendMessage}"/>
+		   	<p:message for="msg" showDetail="El campo no debe estar vacio"/>
+		 </p:panelGrid>		    
+	    </h:form>
+	</ui:define>	
+</ui:composition>
